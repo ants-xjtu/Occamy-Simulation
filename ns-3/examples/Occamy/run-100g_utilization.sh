@@ -29,13 +29,13 @@ for webLoad in ${webLoad_array[*]};do
     for requestSizeRate in ${requestSizeRate_array[*]};do        
         for tcpProtocol in ${tcpProtocol_array[*]};do
             for method in ${method_array[*]};do
-                while [[ $(ps aux|grep "occamy_100g_log-optimized"|wc -l) -gt $N_CORES ]];do
+                while [[ $(ps aux|grep "occamy_100g_utilization-optimized"|wc -l) -gt $N_CORES ]];do
                     sleep 10;
                     echo "waiting for cores, $N running..."
                 done
                 N=$(( $N+1 ))
-                echo "./ns3 run \"examples/Occamy/occamy_100g_log.cc --method=${method} --alpha=${alpha} --tcpProtocol=${tcpProtocol} --webLoad=${webLoad} --requestSizeRate=${requestSizeRate} --requestFlowRate=${requestFlowRate} --bufferSize=${bufferSize} --nPrior=${nPrior}\""
-                ./ns3 run "examples/Occamy/occamy_100g_log.cc --method=${method} --alpha=${alpha} --tcpProtocol=${tcpProtocol} --webLoad=${webLoad} --requestSizeRate=${requestSizeRate} --requestFlowRate=${requestFlowRate} --bufferSize=${bufferSize} --nPrior=${nPrior}" > /dev/null &
+                echo "./ns3 run \"examples/Occamy/occamy_100g_utilization.cc --method=${method} --alpha=${alpha} --tcpProtocol=${tcpProtocol} --webLoad=${webLoad} --requestSizeRate=${requestSizeRate} --requestFlowRate=${requestFlowRate} --bufferSize=${bufferSize} --nPrior=${nPrior}\""
+                ./ns3 run "examples/Occamy/occamy_100g_utilization.cc --method=${method} --alpha=${alpha} --tcpProtocol=${tcpProtocol} --webLoad=${webLoad} --requestSizeRate=${requestSizeRate} --requestFlowRate=${requestFlowRate} --bufferSize=${bufferSize} --nPrior=${nPrior}" > /dev/null &
                 sleep 2
                 echo $N
             done
@@ -50,13 +50,13 @@ for webLoad in ${webLoad_array[*]};do
     for requestSizeRate in ${requestSizeRate_array[*]};do        
         for tcpProtocol in ${tcpProtocol_array[*]};do
             for method in ${method_array[*]};do
-                while [[ $(ps aux|grep "occamy_100g_log-optimized"|wc -l) -gt $N_CORES ]];do
+                while [[ $(ps aux|grep "occamy_100g_utilization-optimized"|wc -l) -gt $N_CORES ]];do
                     sleep 10;
                     echo "waiting for cores, $N running..."
                 done
                 N=$(( $N+1 ))
-                echo "./ns3 run \"examples/Occamy/occamy_100g_log.cc --method=${method} --alpha=${alpha} --tcpProtocol=${tcpProtocol} --webLoad=${webLoad} --requestSizeRate=${requestSizeRate} --requestFlowRate=${requestFlowRate} --bufferSize=${bufferSize} --nPrior=${nPrior}\""
-                ./ns3 run "examples/Occamy/occamy_100g_log.cc --method=${method} --alpha=${alpha} --tcpProtocol=${tcpProtocol} --webLoad=${webLoad} --requestSizeRate=${requestSizeRate} --requestFlowRate=${requestFlowRate} --bufferSize=${bufferSize} --nPrior=${nPrior}" > /dev/null &
+                echo "./ns3 run \"examples/Occamy/occamy_100g_utilization.cc --method=${method} --alpha=${alpha} --tcpProtocol=${tcpProtocol} --webLoad=${webLoad} --requestSizeRate=${requestSizeRate} --requestFlowRate=${requestFlowRate} --bufferSize=${bufferSize} --nPrior=${nPrior}\""
+                ./ns3 run "examples/Occamy/occamy_100g_utilization.cc --method=${method} --alpha=${alpha} --tcpProtocol=${tcpProtocol} --webLoad=${webLoad} --requestSizeRate=${requestSizeRate} --requestFlowRate=${requestFlowRate} --bufferSize=${bufferSize} --nPrior=${nPrior}" > /dev/null &
                 sleep 2
                 echo $N
             done
@@ -66,7 +66,7 @@ done
 
 
 
-while [[ $(ps aux|grep "occamy_100g_log-optimized"|wc -l) -gt 1 ]];do
+while [[ $(ps aux|grep "occamy_100g_utilization-optimized"|wc -l) -gt 1 ]];do
 	echo "Waiting for simulations to finish..."
 	sleep 5
 done

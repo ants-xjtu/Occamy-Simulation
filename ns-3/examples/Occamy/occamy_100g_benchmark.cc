@@ -582,7 +582,7 @@ main (int argc, char *argv[])
     Simulator::Run ();
     
 
-    std::string resultFolder = "./examples/Occamy/100g_test/";
+    std::string resultFolder = "./examples/Occamy/100g_benchmark/";
     if (!fs::exists(resultFolder)) {
         std::cout << "Folder does not exist. Creating: " << resultFolder << std::endl;
 

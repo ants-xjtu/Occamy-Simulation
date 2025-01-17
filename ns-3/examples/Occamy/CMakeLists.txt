@@ -1,6 +1,6 @@
 build_example(
-  NAME occamy_100g_log
-  SOURCE_FILES occamy_100g_log.cc
+  NAME occamy_100g_utilization
+  SOURCE_FILES occamy_100g_utilization.cc
   LIBRARIES_TO_LINK
     ${libcore}
     ${libpoint-to-point}
@@ -11,8 +11,8 @@ build_example(
 )
 
 build_example(
-  NAME occamy_100g_test
-  SOURCE_FILES occamy_100g_test.cc
+  NAME occamy_100g_benchmark
+  SOURCE_FILES occamy_100g_benchmark.cc
   LIBRARIES_TO_LINK
     ${libcore}
     ${libpoint-to-point}

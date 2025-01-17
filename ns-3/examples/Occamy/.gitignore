@@ -1,0 +1,7 @@
+*.xml
+*.jpg
+data/
+figure/
+*.tar
+100g_*
+log_*
