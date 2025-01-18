@@ -502,11 +502,15 @@ def draw_allreduce_size(folder_name):
 
 if __name__ == '__main__':
 
-
     file_dir = "100g_allreduce/"
-    output_file = "data/allreduce.txt"
+    data_output_file = "data/100g_allreduce.txt"
+    figure_output_folder = "figure/100g_allreduce/"
 
-    write_to_txt(file_dir, output_file)
+    os.makedirs(os.path.dirname(data_output_file), exist_ok=True)
+    os.makedirs(figure_output_folder, exist_ok=True)
 
-    donot_unitize_data(output_file)
-    draw_allreduce_size("figure/allreduce/")
+    write_to_txt(file_dir, data_output_file)
+
+    donot_unitize_data(data_output_file)
+
+    draw_allreduce_size(figure_output_folder)

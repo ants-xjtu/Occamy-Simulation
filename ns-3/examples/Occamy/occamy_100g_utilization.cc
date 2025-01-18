@@ -83,7 +83,7 @@ main (int argc, char *argv[])
     CommandLine cmd (__FILE__);
 
     double START_TIME = 1;
-	double FLOW_LAUNCH_END_TIME = 1.0001;
+	double FLOW_LAUNCH_END_TIME = 1.01;
 	double END_TIME = FLOW_LAUNCH_END_TIME + 0.08;
 	cmd.AddValue ("StartTime", "Start time of the simulation", START_TIME);
 	cmd.AddValue ("EndTime", "End time of the simulation", END_TIME);

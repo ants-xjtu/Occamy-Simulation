@@ -449,15 +449,18 @@ def draw_request_size_rate(folder_name):
                             plt.cla()
 
 
-
-
 if __name__ == '__main__':
 
     file_dir = "100g_benchmark/"
-    output_file = "data/100g_benchmark.txt"
+    data_output_file = "data/100g_benchmark.txt"
+    figure_output_folder = "figure/100g_benchmark/"
 
-    write_to_txt(file_dir, output_file)
+    os.makedirs(os.path.dirname(data_output_file), exist_ok=True)
+    os.makedirs(figure_output_folder, exist_ok=True)
 
-    donot_unitize_data(output_file)
-    draw_request_size_rate("figure/100g_benchmark/")
+    write_to_txt(file_dir, data_output_file)
+
+    donot_unitize_data(data_output_file)
+
+    draw_request_size_rate(figure_output_folder)
    
