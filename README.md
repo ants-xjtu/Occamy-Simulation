@@ -145,7 +145,7 @@ This document provides instructions on how to reproduce the main experimental re
    The figure and related data will be in:
 
    ```bash
-   figure/100g_allreduce/
+   figure/100g_queryload/
    ```
 
 ------
