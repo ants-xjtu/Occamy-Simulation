@@ -1,6 +1,6 @@
 # Reproducing Results from the Paper
 
-This document provides instructions on how to reproduce the main experimental results (Figures 6, 14, 15, 16, and 17) presented in our paper using the **Occamy-Simulation** codebase.
+This document provides instructions on how to reproduce the main experimental results (Figure 6, 16-19) presented in our paper using the **Occamy-Simulation** codebase.
 
 ## Prerequisites
 
@@ -56,7 +56,7 @@ This document provides instructions on how to reproduce the main experimental re
 
 ------
 
-## Figure 14. QCT and FCT under Benchmark Traffic
+## Figure 16. QCT and FCT under Benchmark Traffic
 
 1. **Run the simulation**
 
@@ -81,7 +81,7 @@ This document provides instructions on how to reproduce the main experimental re
 
 ------
 
-## Figure 15. Performance with All-to-All Traffic
+## Figure 17. Performance with All-to-All Traffic
 
 1. **Run the simulation**
 
@@ -104,7 +104,7 @@ This document provides instructions on how to reproduce the main experimental re
 
 ------
 
-## Figure 16. Performance with All-Reduce Traffic
+## Figure 18. Performance with All-Reduce Traffic
 
 1. **Run the simulation**
 
@@ -127,7 +127,7 @@ This document provides instructions on how to reproduce the main experimental re
 
 ------
 
-## Figure 17. Performance with Higher Query Traffic Load
+## Figure 19. Performance with Higher Query Traffic Load
 
 1. **Run the simulation**
 
