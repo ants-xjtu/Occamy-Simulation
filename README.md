@@ -17,6 +17,7 @@ This document provides instructions on how to reproduce the main experimental re
      ```bash
      cd Occamy-Simulation/ns-3/
      ./ns3 configure --build-profile=optimized --enable-examples --enable-tests
+     ./ns3
      ```
 
    - After building, navigate to the Occamy directory:
@@ -25,7 +26,7 @@ This document provides instructions on how to reproduce the main experimental re
      cd Occamy-Simulation/ns-3/examples/Occamy/
      ```
 
-   All commands below assume you are inside this `Occamy` directory.
+All of the following commands assume that you are within the `Occamy` directory.
 
 ------
 
@@ -47,7 +48,7 @@ This document provides instructions on how to reproduce the main experimental re
 
    This script reads the output of the simulation and plots the CDF of buffer (or memory) bandwidth utilization.
 
-3. **Result**
+3. **View the results**
    The resulting figures will appear under:
 
    ```bash
@@ -72,7 +73,7 @@ This document provides instructions on how to reproduce the main experimental re
 
    This script calculates slowdowns, QCT, and FCT from the simulation output.
 
-3. **Result**
+3. **View the results**
    The figure and related data will be in:
 
    ```bash
@@ -95,7 +96,7 @@ This document provides instructions on how to reproduce the main experimental re
    python get_slowdown_alltoall.py
    ```
 
-3. **Result**
+3. **View the results**
    The figure and related data will be in:
 
    ```bash
@@ -141,7 +142,7 @@ This document provides instructions on how to reproduce the main experimental re
    python get_slowdown_queryload.py
    ```
 
-3. **Result**
+3. **View the results**
    The figure and related data will be in:
 
    ```bash
