@@ -31,7 +31,7 @@ def process_logs(folder, alpha_values, web_loads):
         for alpha in alpha_values:
             buffer_utilizations = []
             for sw in range(16):
-                file_name = f"DT-{alpha}~DCTCP-{web_load}-0.4-200.0-4194304-2-q-sw-{sw}.txt"
+                file_name = f"DT-{alpha}~DCTCP-{web_load}-0.0-200.0-4194304-2-q-sw-{sw}.txt"
                 file_path = os.path.join(folder, file_name)
                 if not os.path.exists(file_path):
                     print(f"File not found: {file_path}")
@@ -63,7 +63,7 @@ def process_logs(folder, alpha_values, web_loads):
         for web_load in web_loads:
             memory_bandwidths = [] 
             for sw in range(16):
-                file_name = f"DT-{alpha}~DCTCP-{web_load}-0.4-200.0-4194304-2-q-sw-{sw}.txt"
+                file_name = f"DT-{alpha}~DCTCP-{web_load}-0.0-200.0-4194304-2-q-sw-{sw}.txt"
                 file_path = os.path.join(folder, file_name)
                 if not os.path.exists(file_path):
                     print(f"File not found: {file_path}")
@@ -85,7 +85,7 @@ def process_logs(folder, alpha_values, web_loads):
         plt.legend()
         plt.grid(True)
 
-        save_folder = "figure/utilization"
+        save_folder = "figure/motivation"
         os.makedirs(save_folder, exist_ok=True)
         plt.savefig(f"{save_folder}/memory_bandwidth_alpha_{alpha}.png", dpi=300)
         plt.close()

@@ -47,27 +47,27 @@ AsciiTraceHelper swTraceHelper;
 std::string key = "";
 
 void GetMsg(NodeContainer* sw, double nanodelay){
-    if(!first){
-        for(int i=0;i<16;i++){
-            std::string swOutFile = "log_forward_motivation_log/"+ key + "-sw-" + std::to_string(i) + ".txt";
-            swStats[i] = swTraceHelper.CreateFileStream (swOutFile);
-        }
-        first = true;
-    }
+    // if(!first){
+    //     for(int i=0;i<16;i++){
+    //         std::string swOutFile = "log_forward_motivation_log/"+ key + "-sw-" + std::to_string(i) + ".txt";
+    //         swStats[i] = swTraceHelper.CreateFileStream (swOutFile);
+    //     }
+    //     first = true;
+    // }
     for(int i=0;i<sw->GetN();i++){
         // *swStats[i]->GetStream()<<Simulator::Now().GetSeconds()<<" ";
-        *swStats[i]->GetStream()<<Simulator::Now().GetNanoSeconds()<<" ";
+        //*swStats[i]->GetStream()<<Simulator::Now().GetNanoSeconds()<<" ";
         for(int j=0;j<4;j++){
             uint64_t send_rate = sw->Get(i)->m_switch_group[j]->send_size * 8 * (1000000000 / nanodelay);
-            *swStats[i]->GetStream()<<send_rate<<" ";
+            //*swStats[i]->GetStream()<<send_rate<<" ";
             sw->Get(i)->m_switch_group[j]->send_size = 0;
             sw->Get(i)->m_switch_group[j]->send_rate = send_rate;
         }
         for(int j=0;j<4;j++){
             double mem_rate =1.0* sw->Get(i)->m_switch_group[j]->GetUsedBuffer() / sw->Get(i)->m_switch_group[j]->GetMaxBuffer();
-            *swStats[i]->GetStream()<<mem_rate<<" ";
+            //*swStats[i]->GetStream()<<mem_rate<<" ";
         }
-        *swStats[i]->GetStream()<<std::endl;
+        //*swStats[i]->GetStream()<<std::endl;
     }
 
     if(Simulator::Now ().GetNanoSeconds () < 1100000000){
@@ -551,7 +551,7 @@ main (int argc, char *argv[])
 
     Ipv4GlobalRoutingHelper::PopulateRoutingTables ();
 
-    //Simulator::Schedule(Seconds(1.0), GetMsg, &sw, 10000);
+    Simulator::Schedule(Seconds(1.0), GetMsg, &sw, 10000);
 
     Simulator::Stop (Seconds (END_TIME+10));
     Simulator::Run ();
