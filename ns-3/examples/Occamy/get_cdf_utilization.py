@@ -53,7 +53,7 @@ def process_logs(folder, alpha_values, web_loads):
         plt.legend()
         plt.grid(True)
 
-        save_folder = "figure/motivation"
+        save_folder = "figure/utilization"
         os.makedirs(save_folder, exist_ok=True)
         plt.savefig(f"{save_folder}/buffer_utilization_load_{float(web_load) * 100:.0f}.png", dpi=300)
         plt.close()
@@ -85,7 +85,7 @@ def process_logs(folder, alpha_values, web_loads):
         plt.legend()
         plt.grid(True)
 
-        save_folder = "figure/motivation"
+        save_folder = "figure/utilization"
         os.makedirs(save_folder, exist_ok=True)
         plt.savefig(f"{save_folder}/memory_bandwidth_alpha_{alpha}.png", dpi=300)
         plt.close()
